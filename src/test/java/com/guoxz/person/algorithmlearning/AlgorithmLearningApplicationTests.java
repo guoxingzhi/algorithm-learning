@@ -21,7 +21,8 @@ public class AlgorithmLearningApplicationTests {
 	@Test
 	public void testKnapsack(){
 		int[] weights = {3,5,7,9,11,13,17,19};
-		backpackProblem.knapsack(weights, weights.length, 31);
+		int w = backpackProblem.knapsack(weights, weights.length, 31);
+		System.out.println("背包最重为：" + w);
 	}
 
 }

@@ -17,12 +17,12 @@ public class BackpackProblem {
     *@param weight : 所有物品的重量集合
     *@param n :物品的数量
     *@param w :背包的总重量
-    * @return : void
+    * @return : int 背包最大的总重量
     * @author guoxz
     * @version 1.0
     * @since  2019/4/3 9:05
     */
-    public void knapsack(int[] weight, int n, int w){
+    public int knapsack(int[] weight, int n, int w){
         boolean[][] itemsStatus = new boolean[n][w+1];
         //先把第一个物品预处理
         itemsStatus[0][0] = true;
@@ -47,11 +47,18 @@ public class BackpackProblem {
                 }
             }*/
         }
+        //控制台打印多阶段的矩阵
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < w + 1; j++) {
                 System.out.print(itemsStatus[i][j]+" ");
             }
             System.out.println(" ");
         }
+        for (int i = w; i > 0; i--) {
+            if(itemsStatus[n-1][i]){
+                return i;
+            }
+        }
+        return 0;
     }
 }
