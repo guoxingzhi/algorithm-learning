@@ -19,4 +19,23 @@ public class BackpackProblemTest {
     @Test
     public void knapsack() {
     }
+
+
+    private BackpackProblem backpackProblem = new BackpackProblem();
+
+    @Test
+    public void testKnapsack(){
+        int[] weights = {3,5,7,9,11,13,17,19};
+        int w = backpackProblem.knapsack(weights, weights.length, 31);
+        System.out.println("背包最重为：" + w);
+    }
+
+
+
+    @Test
+    public void optimizeKnapsack(){
+        int[] weights = {3,5,7,9,11,13,17,19};
+        int w = backpackProblem.optimizeKnapsack(weights, weights.length, 31);
+        System.out.println("背包最重为：" + w);
+    }
 }

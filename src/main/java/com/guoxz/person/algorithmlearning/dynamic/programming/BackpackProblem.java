@@ -54,8 +54,39 @@ public class BackpackProblem {
             }
             System.out.println(" ");
         }
+        //输出结果
         for (int i = w; i > 0; i--) {
             if(itemsStatus[n-1][i]){
+                return i;
+            }
+        }
+        return 0;
+    }
+    /**
+    * @Title: optimizeKnapsack
+    * @Description: 对knapsack的优化处理，将二维数组变成一维数组
+     *@param weight : 物品的重量集合
+     *@param n : 物品的个数
+     *@param w : 背包的可装载重量
+    * @return : int
+    * @author guoxz
+    * @version 1.0
+    * @since  2019/4/4 8:44
+    */
+    public int optimizeKnapsack(int[] weight, int n, int w){
+        boolean[] knapsackStatus = new boolean[w + 1];
+        knapsackStatus[0] = true;
+        knapsackStatus[weight[0]] = true;
+        for (int i = 0; i < n; i++) {
+            for (int j = w-weight[i]; j > 0 ; j--) {
+                if (knapsackStatus[j]) {
+                    knapsackStatus[j + weight[i]] = true;
+                }
+            }
+        }
+        //打印结果集
+        for (int i = w; i > 0; i--) {
+            if(knapsackStatus[i]){
                 return i;
             }
         }
