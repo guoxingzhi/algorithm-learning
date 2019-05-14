@@ -39,7 +39,8 @@ public class EditDistance {
     }
 
     public static void main(String[] args) {
-        System.out.println("合并分支pull request测试");
+        System.out.println("合并分支pull request测试1");
+        System.out.println("合并分支pull request测试2");
     }
 
 }
