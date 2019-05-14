@@ -38,4 +38,12 @@ public class BackpackProblemTest {
         int w = backpackProblem.optimizeKnapsack(weights, weights.length, 31);
         System.out.println("背包最重为：" + w);
     }
+
+    @Test
+    public void bigCostKnapsackTest(){
+        int[] weights = {3,5,7,9,11,13,17,19};
+        int[] itemsCost = {2,3,5,4,7,6,9,18};
+        int w = backpackProblem.bigCostKnapsack(weights, itemsCost,weights.length, 31);
+        System.out.println("背包最重为：" + w);
+    }
 }
