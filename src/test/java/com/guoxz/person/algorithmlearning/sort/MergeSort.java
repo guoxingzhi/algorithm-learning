@@ -32,7 +32,17 @@ public class MergeSort {
         mergeSortSbsc(outofArray, 0, array.length-1);
         return outofArray;
     }
-
+    /***
+    * @Title: mergeSortSbsc
+    * @Description: 归并排序的"归"过程，将数据一分为二
+    * @param array :
+    * @param start :
+    * @param end :
+    * @return : void
+    * @author guoxz
+    * @version 1.0
+    * @since  2019/12/5 16:09
+    */
     private void mergeSortSbsc(int[] array, int start, int end) {
         if(start >= end){
             return;
@@ -43,7 +53,19 @@ public class MergeSort {
         mergeSortSbsc(array,med+1,end);
         merge(new int[end-start+1],array,start,med,end);
     }
-
+    /***
+    * @Title: merge
+    * @Description: 将"归"过程的两个子集合进行合并为一个集合
+    * @param ints :
+    * @param array :
+    * @param start :
+    * @param med :
+    * @param end :
+    * @return : void
+    * @author guoxz
+    * @version 1.0
+    * @since  2019/12/5 16:10
+    */
     private void merge(int[] ints, int[] array, int start, int med, int end) {
         int i = start,j = med+1,k = 0 ;
         while (i<=med && j <= end){
